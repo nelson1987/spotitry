@@ -14,7 +14,7 @@ RUN rm -rf /usr/share/nginx/html/*
 
 COPY nginx.conf /etc/nginx/nginx.conf
 
-COPY --from=build  /usr/dist/angular-docker-env /usr/share/nginx/html
+COPY --from=build  /usr/dist/spotitry /usr/share/nginx/html
 
 RUN echo "mainFileName=\"\$(ls /usr/share/nginx/html/main*.js)\" && \
           envsubst '\$URL_IMAGEM ' < \${mainFileName} > main.tmp && \
